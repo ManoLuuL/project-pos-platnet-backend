@@ -9,13 +9,13 @@ namespace ProjetoAcademico.Infra.Data.Context
         DbContextOptions<ProjetoAcademicoContext> options) : DbContext(options)
     {
         public DbSet<Curso> CursoSet { get; set; }
+        public DbSet<Professor> ProfessorSet { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Ignore<Notification>();
-
-            //modelBuilder.ApplyConfiguration(new CursoConfiguration()); // Mapeamento 1 a 1
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); // Mapeamento de forma geral
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly()); 
 
             base.OnModelCreating(modelBuilder);
         }

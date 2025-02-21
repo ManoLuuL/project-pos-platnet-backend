@@ -48,35 +48,35 @@ app.UseHttpsRedirection();
 
 #region Endpoints Curso
 
-app.MapPost("/adicionar", ([FromServices] IServiceCurso serviceCurso, CursoAdicionarDto cursoAdicionarDto) =>
+app.MapPost("/curso/adicionar", ([FromServices] IServiceCurso serviceCurso, CursoAdicionarDto cursoAdicionarDto) =>
 {
     var response = serviceCurso.Adicionar(cursoAdicionarDto);
     return response.Sucesso ? Results.Created("created", response) : Results.BadRequest(response);
 })
 .WithTags("Curso");
 
-app.MapGet("/listar", ([FromServices] IServiceCurso serviceCurso) =>
+app.MapGet("/curso/listar", ([FromServices] IServiceCurso serviceCurso) =>
 {
     var response = serviceCurso.Listar();
     return Results.Ok(response);
 })
 .WithTags("Curso");
 
-app.MapGet("/obter/{id:guid}", ([FromServices] IServiceCurso serviceCurso, Guid id) =>
+app.MapGet("/curso/obter/{id:guid}", ([FromServices] IServiceCurso serviceCurso, Guid id) =>
 {
     var response = serviceCurso.Obter(id);
     return response.Sucesso ? Results.Ok(response) : Results.BadRequest(response);
 })
 .WithTags("Curso");
 
-app.MapPut("/atualizar", ([FromServices] IServiceCurso serviceCurso, CursoAtualizarDto cursoAtualizarDto) =>
+app.MapPut("/curso/atualizar", ([FromServices] IServiceCurso serviceCurso, CursoAtualizarDto cursoAtualizarDto) =>
 {
     var response = serviceCurso.Atualizar(cursoAtualizarDto);
     return response.Sucesso ? Results.Ok(response) : Results.BadRequest(response);
 })
 .WithTags("Curso");
 
-app.MapDelete("/remover/{id:guid}", ([FromServices] IServiceCurso serviceCurso, Guid id) =>
+app.MapDelete("/curso/remover/{id:guid}", ([FromServices] IServiceCurso serviceCurso, Guid id) =>
 {
     var response = serviceCurso.Remover(id);
     return response.Sucesso ? Results.Ok(response) : Results.BadRequest(response);
@@ -87,35 +87,35 @@ app.MapDelete("/remover/{id:guid}", ([FromServices] IServiceCurso serviceCurso, 
 
 #region Endpoints Professor
 
-app.MapPost("/adicionar", ([FromServices] IServiceProfessor serviceProfessor, ProfessorAdicionarDto professorAdicionarDto) =>
+app.MapPost("/professor/adicionar", ([FromServices] IServiceProfessor serviceProfessor, ProfessorAdicionarDto professorAdicionarDto) =>
 {
     var response = serviceProfessor.Adicionar(professorAdicionarDto);
     return response.Sucesso ? Results.Created("created", response) : Results.BadRequest(response);
 })
 .WithTags("Professor");
 
-app.MapGet("/listar", ([FromServices] IServiceProfessor serviceProfessor) =>
+app.MapGet("/professor/listar", ([FromServices] IServiceProfessor serviceProfessor) =>
 {
     var response = serviceProfessor.Listar();
     return Results.Ok(response);
 })
 .WithTags("Professor");
 
-app.MapGet("/obter/{id:guid}", ([FromServices] IServiceProfessor serviceProfessor, Guid id) =>
+app.MapGet("/professor/obter/{id:guid}", ([FromServices] IServiceProfessor serviceProfessor, Guid id) =>
 {
     var response = serviceProfessor.Obter(id);
     return response.Sucesso ? Results.Ok(response) : Results.BadRequest(response);
 })
 .WithTags("Professor");
 
-app.MapPut("/atualizar", ([FromServices] IServiceProfessor serviceProfessor, ProfessorAtualizarDto professorAtualizarDto) =>
+app.MapPut("/professor/atualizar", ([FromServices] IServiceProfessor serviceProfessor, ProfessorAtualizarDto professorAtualizarDto) =>
 {
     var response = serviceProfessor.Atualizar(professorAtualizarDto);
     return response.Sucesso ? Results.Ok(response) : Results.BadRequest(response);
 })
 .WithTags("Professor");
 
-app.MapDelete("/remover/{id:guid}", ([FromServices] IServiceProfessor serviceProfessor, Guid id) =>
+app.MapDelete("/professor/remover/{id:guid}", ([FromServices] IServiceProfessor serviceProfessor, Guid id) =>
 {
     var response = serviceProfessor.Remover(id);
     return response.Sucesso ? Results.Ok(response) : Results.BadRequest(response);

@@ -1,4 +1,4 @@
-namespace ProjetoAcademico.Domain.DTOs.ProfessroDto.Obter;
+namespace ProjetoAcademico.Domain.DTOs.ProfessorDto.Obter;
 
 public class ProfessorObterDto
 {

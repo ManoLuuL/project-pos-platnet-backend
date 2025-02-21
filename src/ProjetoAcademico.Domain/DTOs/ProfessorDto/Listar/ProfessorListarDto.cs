@@ -4,4 +4,6 @@ public class ProfessorListarDto
 {
     public Guid Id { get; set; }
     public required string Nome { get; set; }
+    public required string Biografia { get; set; }
+
 }

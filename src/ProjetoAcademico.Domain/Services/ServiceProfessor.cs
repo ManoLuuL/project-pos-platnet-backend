@@ -4,7 +4,6 @@ using ProjetoAcademico.Domain.DTOs.ProfessorDto.Atualizar;
 using ProjetoAcademico.Domain.DTOs.ProfessorDto.Listar;
 using ProjetoAcademico.Domain.DTOs.ProfessorDto.Obter;
 using ProjetoAcademico.Domain.Entities;
-using ProjetoAcademico.Domain.Enumerators;
 using ProjetoAcademico.Domain.Interfaces.Repositories;
 using ProjetoAcademico.Domain.Interfaces.Services;
 using ProjetoAcademico.Infra.CrossCutting.NotificationPattern;
@@ -63,7 +62,7 @@ namespace ProjetoAcademico.Domain.Services
             repositoryProfessor.Commit();
 
             return new ServiceResponse<BaseResponse>(
-                new BaseResponse(professor.Id, "Professor Adicionado com Sucesso."), 
+                new BaseResponse(professor.Id, "Professor Adicionado com Sucesso."),
                 this);
         }
 
